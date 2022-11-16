@@ -1,0 +1,144 @@
+.page-nav{
+    padding: 0;
+    & > .container{ /*Includes container-size from mixin and lign text left*/
+        margin-top: 3rem;
+        text-align: left;
+        @include container-small;
+        
+        .nav-list{ /*Center contnetn and style list elements*/
+            display: flex;
+            align-items: center;
+            li{
+                list-style: none;
+                display: inline-block;
+                font-size: $font-size-16;
+                font-weight: $font-weight-medium;
+                margin-left: 0.5rem;
+            }   
+        }
+    }
+}
+
+.map-layout{
+
+    & > .container-fluid{
+        
+        iframe{ /*set´s widh and removes padding for the map*/
+            margin-top:5rem;
+            width: 100%;
+            padding: 0;
+        }
+    }   
+
+    & > .container{
+        
+        margin-top: 3rem; /* set´s margin and includes container-size from mixin*/
+        margin-bottom: 6rem;
+        @include container-small;
+
+        .formMessege{
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-input{
+          h3{
+            font-size: $font-size-18;
+            font-weight: $font-weight-bold;
+            margin-bottom: 1rem;
+          }
+        
+          .contact-form{ /*Grid layout for the contact form*/
+            
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 0px;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+
+            .input-control{ 
+                position: relative;
+                width: 100%;
+
+                .nameError{ /*Position of the error messeage that displays valid/invalid when typing.*/
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding-right: 1rem;
+                    padding-top: 0.1rem;
+                }
+
+                .emailError{ /*Position of the error messeage that displays valid/invalid when typing.*/
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding-right: 1rem;
+                    padding-top: 0.1rem;
+                }
+
+                .invalid{ /* css below set´s the color of red or green depending of the input is valid or invalid. */
+                    color: red;
+                }
+
+                .valid{
+                    color: green;
+                }
+
+                .invalidName{
+                    color: red;
+                }
+
+                .validName{
+                    color: green;
+                }
+                
+                label{
+                    display: none;
+                }
+                .input-area{
+                    width: 100%;
+                    display: flex;
+                    padding-left: 2rem;
+                }
+
+                input{
+                    width: 100%;
+                }
+
+                input:focus{ /*removes focus lines on input element.*/
+                    outline: none;
+                }
+ 
+            }
+          }
+        }
+        .text-area{ /*Grid setting fot the text-area element. */
+            grid-column: 1 /-1;
+            grid-row: 2 / 2;
+            textarea{
+                width: 100%;
+                height: 140px;
+                border: 2px solid;
+            }
+
+            textarea:focus{
+                outline: none;
+            }
+        }
+
+        .submit-form{ /*Styling for the submit button*/
+            width: 207px;
+            height: 50px;
+            color: $white-theme-10;
+            background-color:$red-theme;
+            border: none;
+
+            &:active{
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+    }
+}

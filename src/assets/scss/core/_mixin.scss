@@ -1,0 +1,566 @@
+@mixin center-Content { /*Mixin that centers content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin red-button { /*Styling fot the red buttons*/
+    button{ /*Fixed with  and set to a relative postion*/
+        border: none;
+        background-color: $red-theme;
+        padding: 1rem;
+        position: relative;
+        width: 10rem;
+        color: $white-theme-10;
+        font-weight: $font-weight-semi-regular;
+        transition: 0.3s;
+
+        &:hover{
+            background-color: $dark-theme;
+        }
+
+       #top-left{ /*Rotatses corner icon and positioin it inside button*/
+        transform: rotate(135deg);
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.5rem;
+        }
+        #bottom-right{ /*Rotatses corner icon and positioin it inside button*/
+            transform: rotate(135deg); 
+            color: white;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 0.5rem;
+
+        }
+    }
+}
+
+@mixin black-button { /*Same setup as red button but colors reversed. */
+    button{
+        border: none;
+        background-color: $dark-theme;
+        padding: 1rem;
+        position: relative;
+        width: 10rem;
+        color: $white-theme-10;
+        font-weight: $font-weight-semi-regular;
+        transition: 0.3s;
+
+        &:hover{
+            background-color: $white-theme-10;
+            color: $dark-theme;
+
+            #top-left,
+            #bottom-right{
+                color: $dark-theme;
+            }
+        }
+
+       #top-left{
+        transform: rotate(135deg);
+        color: $white-theme-10;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.5rem;
+        transition: 0.3s ease-in-out;
+        }
+        #bottom-right{
+            transform: rotate(135deg); 
+            color: $white-theme-10;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 0.5rem;
+            transition: 0.3s ease-in-out;
+
+        }
+    }
+}
+
+@mixin center-productBox { /*CSS styling fot the product box with centered text content.*/ 
+    .product-box{
+        display: flex; /*Centered contnent in a column layout*/
+        flex-direction: column;
+        @include center-Content;
+        position: relative;
+        margin: 2rem;
+        
+        overflow: hidden; /*Hides the floating icons when box is not hovered*/
+
+        &:hover{
+            .product-menu{
+                top: 2px; /* Icons stop 2px from te top*/
+
+            }
+            .quick-view{
+                height: 15%;
+                transition: 0.3s; /*Button takes 15% of image when hovered*/
+
+               
+              
+            }
+            .product-background{
+                background-color: $grey-theme-30;
+               
+            }
+
+           
+            .quick-view > button{
+                display: inline;
+                
+                
+            }
+            
+        }
+        
+        .product-background{ /*Background/image is set with fixed with.*/
+            width: 200px;
+            height: 200px;
+            background-color: $white-theme-20;
+            transition: 0.3s ease-in-out;
+            width: 100%;
+
+            img{
+                width: 225px;
+                height: 200px;
+            }
+        }
+        
+        .product-content{ /*Centers the content and set´s the sizes and weights of the elements. */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0.5rem;
+           
+            
+
+            .product-stars{
+                color: $red-theme;
+            }
+
+            h4{
+                font-size: $font-size-11;
+                font-weight: $font-weight-medium ;
+                opacity: 0.5;
+            }
+
+            p{
+                font-size: $font-size-16;
+                font-weight: $font-weight-semi-regular;
+            }
+        }
+
+        .quick-view{ /*Styling for the floating sidebar. Position and hidden wuntil card is hovered. */
+            position: absolute;
+            height: 0%;
+            background-color: $red-theme;
+            width: 100%;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+            margin-top: 1.8rem;
+            text-decoration: none;
+
+           
+
+            button{
+                border: none;
+                background-color: $red-theme;
+                display: none;
+                color: $white-theme-10;
+                
+               
+
+                #top-left{ /* Rotates the corner icon and set´s the postion.*/
+                    transform: rotate(135deg);
+                    color: white;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 0.5rem;
+                    }
+                    #bottom-right{ /* Rotates the corner icon and set´s the postion.*/
+                        transform: rotate(135deg); 
+                        color: white;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: 0.5rem;
+            
+                    }
+            }
+        }
+
+        .product-menu{ /*Set´s the placement for the menu*/
+            position: absolute;
+           
+            top: 100%;
+            right: 5%;
+            list-style: none;
+            margin: auto;
+            padding: 0.7rem;
+           
+            display: flex;
+            flex-direction: column;
+            
+
+
+            button{ /*Make the icons have a circle container*/
+                border-radius: $border-radius-circle;
+                background-color: $white-theme-10;
+                height: 30px;
+                width: 30px;
+                border: none;
+                text-decoration: none;
+                margin: 0.2rem;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $dark-theme;
+                    color: $white-theme-10;
+                }
+            }
+
+            i{ /*Padding fot the elements inside circles.*/
+                padding: 0.3rem;
+                color: $dark-theme;
+                &:hover{
+                   
+                    color: $white-theme-10;
+                }
+            }
+        }
+
+    }
+}
+
+@mixin left-productBox { /*Exact same setup as center-ProductBox but the text content is based in the left insead of centered.*/
+    .product-box{
+        display: flex;
+        flex-direction: column;
+        @include center-Content;
+        position: relative;
+        margin: 0rem 2rem 0rem 2rem;
+        
+        overflow: hidden; 
+
+        &:hover{
+            .product-menu{
+                top: 2px;
+
+            }
+            .quick-view{
+                height: 15%;
+                
+                button{
+                    display: inline;
+                    
+                }
+            }
+
+            .product-background{
+                background-color: $grey-theme-30;
+               
+            }
+        }
+        
+        .product-background{
+            width: 200px;
+            height: 200px;
+            background-color: $white-theme-20;
+            transition: 0.3s ease-in-out;
+            width: 100%;
+            
+            img{
+                width: 225px;
+                height: 200px;
+            }
+            
+        }
+        
+        .product-content{
+            display: flex;
+            flex-direction: column;
+            padding-top: 0.5rem;
+           
+            
+
+            .product-stars{
+                color: $red-theme;
+            }
+
+            h4{
+                font-size: $font-size-11;
+                font-weight: $font-weight-medium ;
+                opacity: 0.5;
+            }
+
+            p{
+                font-size: $font-size-16;
+                font-weight: $font-weight-semi-regular;
+            }
+        }
+
+        .quick-view{
+            position: absolute;
+            height: 0%;
+            background-color: $red-theme;
+            width: 100%;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+
+            button{
+                border: none;
+                background-color: $red-theme;
+                display: none;
+                color: $white-theme-10;
+                transition: 0.3s;
+
+                #top-left{
+                    transform: rotate(135deg);
+                    color: white;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 0.5rem;
+                    }
+                    #bottom-right{
+                        transform: rotate(135deg); 
+                        color: white;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: 0.5rem;
+            
+                    }
+            }
+        }
+
+        .product-menu{
+            position: absolute;
+           
+            top: 100%;
+            right: 5%;
+            list-style: none;
+            margin: auto;
+            padding: 0.7rem;
+           
+            display: flex;
+            flex-direction: column;
+            
+
+
+            button{
+                border-radius: $border-radius-circle;
+                background-color: $white-theme-10;
+                height: 30px;
+                width: 30px;
+                border: none;
+                text-decoration: none;
+                margin: 0.2rem;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $dark-theme;
+                    color: $white-theme-10;
+                }
+            }
+
+            i{
+                padding: 0.3rem;
+                color: $dark-theme;
+                &:hover{
+                   
+                    color: $white-theme-10;
+                }
+            }
+        }
+
+    }
+}
+
+
+@mixin side-by-side-productBox { /*Exact same setup as but the content and image are in a row instaded of a column*/
+    .product-box{
+        margin: 0rem 0rem 0rem 0rem;
+        display: flex;
+        justify-content: space-between;
+        @include center-Content;
+        position: relative;
+        
+        
+        overflow: hidden; 
+
+        &:hover{
+            .product-menu{
+                top: 5px;
+                
+
+            }
+            .quick-view{
+                height: 15%;
+                
+                button{
+                    display: inline;
+                    
+                }
+            }
+
+            .product-background{
+                background-color: $grey-theme-30;
+               
+            }
+        }
+        
+        .product-background{
+            width: 200px;
+            height: 200px;
+            background-color: $white-theme-20;
+            transition: 0.3s ease-in-out;
+           
+            img{
+                width: 200px;
+                height: 200px;
+            }
+            
+        }
+        
+        .product-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 0.6rem;
+            padding-top: 1rem;
+           
+            
+
+            .product-stars{
+                color: $red-theme;
+            }
+
+            h4{
+                font-size: $font-size-11;
+                font-weight: $font-weight-medium ;
+                opacity: 0.5;
+            }
+
+            p{
+                font-size: $font-size-16;
+                font-weight: $font-weight-semi-regular;
+            }
+        }
+
+        .quick-view{
+            position: absolute;
+            height: 0%;
+            background-color: $red-theme;
+       
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            text-decoration: none;
+
+            button{
+                border: none;
+                background-color: $red-theme;
+                display: none;
+                color: $white-theme-10;
+                transition: 0.3s ease-in-out;
+
+                #top-left{
+                    transform: rotate(135deg);
+                    color: white;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 0.5rem;
+                    }
+                    #bottom-right{
+                        transform: rotate(135deg); 
+                        color: white;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: 0.5rem;
+            
+                    }
+            }
+        }
+
+        .product-menu{
+            position: absolute;
+           
+            top: 100%;
+            left: 45%;
+            list-style: none;
+            margin: auto;
+            padding: 0.7rem;
+           
+            display: flex;
+            flex-direction: column;
+            
+
+
+            button{
+                border-radius: $border-radius-circle;
+                background-color: $white-theme-10;
+                height: 30px;
+                width: 30px;
+                border: none;
+                text-decoration: none;
+                margin: 0.2rem;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $dark-theme;
+                    color: $white-theme-10;
+                }
+            }
+
+            i{
+                padding: 0.3rem;
+                color: $dark-theme;
+                &:hover{
+                   
+                    color: $white-theme-10;
+                }
+            }
+        }
+
+    }
+}
+
+@mixin container-large{
+    max-width: 1680px;
+}
+
+@mixin container-small{
+    max-width: 1140px;
+}

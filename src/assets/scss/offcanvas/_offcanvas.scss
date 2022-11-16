@@ -1,0 +1,38 @@
+.offcanvas-body{
+    width: 100%;
+    
+    
+
+    .shoppingCartItem{
+        
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+
+        .item-image{
+            height: 65px;
+            width: 65px;
+            margin: 1.5rem;
+            background-color: $grey-theme-20;
+
+
+            img{
+                height: 65px;
+              width: 65px;
+            }
+        }
+
+        .item-info{
+          
+            .item-info-quantity{
+                margin: 1rem;
+
+                & > button {
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+
+}

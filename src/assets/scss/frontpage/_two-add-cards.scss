@@ -1,0 +1,152 @@
+.two-ad-cards{
+
+    & > .container{ /* Flex column based layout with 100% widht of parent element*/
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        margin-bottom: 2rem;
+        
+        .left-card{
+            @include black-button;
+
+            h3{
+                display: none;
+            }
+            .back-drop-left{
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            button{ /*Needed to position the button for it to look good. Not a great solution. Should be chnaged.*/
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-top: 4rem;
+                margin-right: 1rem;
+            }
+        }
+
+        .right-card{
+            @include black-button; /*Include button from _mixin*/
+            position: relative;
+            h3{
+                display: none; /*remove header on mobile. */
+            }
+
+            .right-card-content{
+                position: absolute;
+                top: 0;
+                padding-top: 4rem;
+            }
+            .back-drop-right{
+                img{
+                    width: 100%;
+                }
+
+                button{ /*Same as the button above, need to position the element. */
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    margin-left: 1.5rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px){
+
+    .two-ad-cards{
+
+        & > .container{ /*Icludes container LArge mixin and flex row layout*/
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            justify-content: space-between;
+            @include container-large;
+    
+            position: relative;
+
+            .left-card{
+                position: relative;
+               
+
+                .left-card-content{ /*flexes the contentn and positioned id, not a good solution but it works..*/
+                    
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-direction: column;
+                    position: absolute;
+                    top:0;
+                    right: 0;
+                    margin-top: 5rem;
+                    margin-right: 1rem;
+
+                    h3{ /*Adds header in 922px+ layout*/
+                        display: inline;
+                        font-size: $font-size-45;
+                        font-weight: $font-weight-bold;
+                        color: $white-theme-10;
+
+                    }
+
+                    & > button{
+                        position: relative;
+                        margin-top:2rem;
+                        margin-left:2rem; 
+                    }
+                }
+            }
+    
+            .right-card{
+                @include black-button; /*inclide button form Mixin.*/
+                
+                
+               
+                .right-card-content{ /*Flexes and positions element, same as above. Noit a good solution but it works..*/
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-direction: column;
+                    position: absolute;
+                    bottom:0;
+                    
+                    margin-bottom: 3rem;
+                    margin-left: 1rem;
+
+                    h3{
+                        display: inline;
+                        font-size: $font-size-45;
+                        color: $white-theme-10;
+                        font-weight: $font-weight-bold;
+                        color: $dark-theme;
+                    }
+
+                    & > button{
+                        position: relative;
+                        margin-top:3rem;
+                    }
+                }
+            }
+        }
+    }
+}

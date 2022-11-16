@@ -1,0 +1,43 @@
+.footer-layout{
+
+    @include center-Content; /*Centers content and positions thew footer to the bottom of the page. And fixed with of 100%*/
+    flex-direction: column;
+    background-color: $white-theme-12;
+    height: 110px;
+    margin-top: 5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    .footer-links{ /* displays flex on links in the footer to a row*/
+    
+        ul{
+            display: flex;
+            margin: 1rem;
+            
+            li{
+                list-style-type: none;
+                margin: 1rem;
+                
+                i{
+                    color: black;
+                    font-size: $font-size-20;
+                    
+                    &:hover{
+                        color: $red-theme;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-content{
+
+        p{
+            font-size: $font-size-16;
+            font-weight: $font-weight-medium;
+            opacity: 0.6;
+            text-align: center;
+        }
+    }
+}

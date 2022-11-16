@@ -1,0 +1,93 @@
+/*MOBILE LAYOUT*/
+
+.Jumbotron{
+    background-color: $grey-theme-11; /*Set´s background color*/
+    
+    
+    & > .container-fluid{ /*Center all content within fluid container.*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .jumbo-img-1,
+        .jumbo-img-2{ /*Removes images on mobile screens*/
+            display: none;
+        }
+
+        .jumbo-header{ /*Centers header. */ 
+            padding-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            @include red-button;
+
+            h1{
+                text-align: center;
+                font-size: $font-size-65;
+                font-weight: $font-weight-extra-bold;
+            }
+
+            p{
+                text-align: center;
+                font-size: $font-size-20;
+                font-weight: $font-weight-regular;
+            }
+           
+            
+        }
+    }
+}
+
+
+/*COMPUER LAYOUT*/
+
+@media (min-width: 992px){
+    .Jumbotron{
+        background-color: $grey-theme-11;
+        
+        
+        & > .container-fluid{ /*Set´s with to cover entire witdh of the page.*/
+            display: flex;
+            width: $max-width-XXL;
+            
+           
+         
+    
+            .jumbo-img-1{
+                flex: 1;
+                display: block;
+                width: 50%;
+            }
+
+            .jumbo-img-2{
+                flex: 1;
+                display: block;
+            }
+    
+            .jumbo-header{ /*Center header content bewtween images.*/
+                padding-top: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                @include red-button;
+                flex: 1;
+    
+                h1{
+                    text-align: center;
+                    font-size: $font-size-65;
+                    font-weight: $font-weight-extra-bold;
+                }
+    
+                p{
+                    text-align: center;
+                    font-size: $font-size-20;
+                    font-weight: $font-weight-regular;
+                }
+               
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.sale-layout-card-2{
+    
+    & > .container-fluid{
+
+        
+        display: flex; /*Center the conteent inside a fluid container*/
+        align-items: center;
+        justify-content: center;
+       
+     
+        .grey-card{ /*Removes the greycard/image on mobile.*/
+            display: none;
+            
+        }
+
+
+        .sale-card-row-1, /*Only displayes product cards. */
+        .sale-card-row-2{
+            display: flex;
+            
+            @include left-productBox;
+
+            .product-box{ /*Sets correct distance between mobiel and 992px*/
+                margin: 2px;
+            }
+            
+           
+         
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px){
+    .sale-layout-card-2{
+        
+        & > .container-fluid{
+    
+            @include container-large; /*large container that is left based on the front page. */
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row-reverse;
+            
+            
+            .sale-cards{
+                height: 820px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .grey-card{
+                width: 50%;
+                height: 820px;
+                background-color: $grey-theme-21;
+                @include black-button;  /*Include black button from _Mixin.*/
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+    
+                h2{
+                    font-size: $font-size-45;
+                    color: $white-theme-10;
+                }
+                
+                
+                
+            }
+            .sale-card-row-1, /*Only displayes product cards. */
+                .sale-card-row-2{
+                    display: flex;
+                    
+                    @include left-productBox;
+                    
+                    .product-box{ /*Sets correct distance between mobiel and 992px*/
+                        margin-left: 2rem;
+                    }
+                
+                }
+    
+        }
+    }
+    
+}

@@ -1,0 +1,408 @@
+.showcase{
+
+    h1{ /*Styling for the header, centers content*/
+       display: none;
+    }
+
+    & > .container{
+        margin-top: 0rem;
+      
+       .display-user{
+        display: flex;
+        flex-direction: column;
+            .product-showcase{
+                .top-showcase{ /*Fixed with for the big image holder in the showcase area*/
+                    width: 300px;
+                    height: 444px;
+                    background-color: $white-theme-11;
+                    img{
+                        width: 390px;
+                        height: 444px;
+                    }
+                }
+
+                .bottom-showcase{ /*Styling for the three small images below, fixed with and spaces with flex.*/
+                    display:none;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 2rem;
+                    margin-top: 5rem;
+                    .show-small{
+                        width: 160px;
+                        height: 132px;
+                        background-color: $white-theme-11;
+                        img{
+                            width: 160px;
+                             height: 132px;
+                        }
+                    }
+                }
+            }
+
+            .showcase-menu{ /*Styling for the menu, sets font size and weight.*/
+                    margin-left: 2rem;
+                    .showcase-menu-content{
+                        h2{
+                            font-size: $font-size-20;
+                            font-weight: $font-weight-bold;
+                        }
+
+                        p{
+                            font-size: $font-size-11;
+                            font-weight:$font-weight-medium;
+                            opacity: 0.6;
+                        }
+                    }
+
+                    #set-price{
+                        font-size: $font-size-18;
+                        margin-top: 1.5rem;
+                    }
+                    
+                    .product-stars{
+                        color: $red-theme;
+                    }
+
+                    .showcase-text{
+                        
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-regular;
+                    }
+
+                .interact-user{ /*Styling for the size and plus/minus buttons on the product page.*/ 
+                    
+                    
+                    width: 40%;
+
+                    .size-buttons-all{ /*styling fot the clothe size buttons, fixed widht and height.*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
+
+                        #change-size{
+                            border: 1px solid $dark-theme;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0.3rem;
+                            background-color: $white-theme-10;
+                        }
+                    }
+
+                    .drop-down{ /*Styling for the drop down menu.*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
+                        select{
+                            height: 40px;
+                        }
+                    }
+                    .add-subtract{ /*Created my own  plus and minus buttons and an input element*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+
+                        .add-sub-content{
+                            display: flex;
+                            height: 50px;
+
+                            & > input{
+                                width: 70px;
+                                text-align: center;
+                            }
+
+                            .add-sub-button{
+                            
+                             button{
+                                height: 50px;
+                                width: 30px;
+                                border: 1px solid $dark-theme;
+                                font-size: $font-size-20;
+                                font-weight: $font-weight-bold;
+                             }
+                            }
+                        }
+                    }
+                }   
+                
+                .showcase-links{ /*Styling for the socoal media links.*/
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 3rem;
+
+                    .showcase-icons{
+                        display: flex;
+
+                        li{
+                            list-style: none;
+                           
+                            a{
+                                margin: 0.5rem;
+                                color: $dark-theme;
+                                font-size: $font-size-16;
+                                text-align: center;
+                                transition: 0.3 ease-in ease-out;
+
+                                &:hover{
+                                    color: $red-theme;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+       }
+       .bottom-sub-menu{
+         margin-top: 5rem;
+            .sub-menu{
+                
+                .sub-menu-links{ /*Spaces the link elements in a row*/
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    width: 100%;
+                    justify-content: space-between;;
+                    border-bottom: 2px solid $red-theme;
+                    border-width: thin;
+                    transition: 0.3s;
+    
+                    li{
+                        list-style: none;
+                       
+                        &:hover{ /*Adds a slider effect to the link elements.*/
+                            border-bottom: 2px solid $red-theme;
+                        }
+                        
+                       & > p{
+                        
+                        color: $dark-theme;
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-regular
+                       }
+                    }
+                }
+            }
+       }
+        .related-prod{
+            .product-content{
+                display: flex;
+                justify-content: space-evenly;
+                @include center-productBox
+            }
+        }
+    }  
+}
+
+
+@media (min-width: 992px){
+    
+.showcase{
+
+    h1{ /*Styling for the header, centers content*/
+        display: block;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        color: $red-theme;
+        font-size: $font-size-16;
+        font-weight: $font-weight-medium;
+    }
+
+    & > .container{
+        margin-top: 3rem;
+      
+       .display-user{
+        display: flex;
+        flex-direction: row;
+            .product-showcase{
+                .top-showcase{ /*Fixed with for the big image holder in the showcase area*/
+                    width: 540px;
+                    height: 444px;
+                    background-color: $white-theme-11;
+                    img{
+                        width: 540px;
+                        height: 444px;
+                    }
+                }
+
+                .bottom-showcase{ /*Styling for the three small images below, fixed with and spaces with flex.*/
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 2rem;
+                    margin-top: 5rem;
+                    
+                    .show-small{
+                        width: 160px;
+                        height: 132px;
+                        background-color: $white-theme-11;
+                        img{
+                            width: 160px;
+                             height: 132px;
+                        }
+                    }
+                }
+            }
+
+            .showcase-menu{ /*Styling for the menu, sets font size and weight.*/
+                    margin-left: 2rem;
+                    .showcase-menu-content{
+                        h2{
+                            font-size: $font-size-20;
+                            font-weight: $font-weight-bold;
+                        }
+
+                        p{
+                            font-size: $font-size-11;
+                            font-weight:$font-weight-medium;
+                            opacity: 0.6;
+                        }
+                    }
+
+                    #set-price{
+                        font-size: $font-size-18;
+                        margin-top: 1.5rem;
+                    }
+                    
+                    .product-stars{
+                        color: $red-theme;
+                    }
+
+                    .showcase-text{
+                        
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-regular;
+                    }
+
+                .interact-user{ /*Styling for the size and plus/minus buttons on the product page.*/ 
+                    
+                    width: 40%;
+
+                    .size-buttons-all{ /*styling fot the clothe size buttons, fixed widht and height.*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
+
+                        #change-size{
+                            border: 1px solid $dark-theme;
+                            width: 30px;
+                            height: 30px;
+                            margin: 0.3rem;
+                            background-color: $white-theme-10;
+                        }
+                    }
+
+                    .drop-down{ /*Styling for the drop down menu.*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
+                        select{
+                            height: 40px;
+                        }
+                    }
+                    .add-subtract{ /*Created my own  plus and minus buttons and an input element*/
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+
+                        .add-sub-content{
+                            display: flex;
+                            height: 50px;
+
+                            & > input{
+                                width: 70px;
+                                text-align: center;
+                            }
+
+                            .add-sub-button{
+                            
+                             button{
+                                height: 50px;
+                                width: 30px;
+                                border: 1px solid $dark-theme;
+                                font-size: $font-size-20;
+                                font-weight: $font-weight-bold;
+                             }
+                            }
+                        }
+                    }
+                }   
+                
+                .showcase-links{ /*Styling for the socoal media links.*/
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 3rem;
+
+                    .showcase-icons{
+                        display: flex;
+
+                        li{
+                            list-style: none;
+                           
+                            a{
+                                margin: 0.5rem;
+                                color: $dark-theme;
+                                font-size: $font-size-16;
+                                text-align: center;
+                                transition: 0.3 ease-in ease-out;
+
+                                &:hover{
+                                    color: $red-theme;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+       }
+       .bottom-sub-menu{
+         margin-top: 5rem;
+            .sub-menu{
+                
+                .sub-menu-links{ /*Spaces the link elements in a row*/
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 0;
+                    width: 50%;
+                    justify-content: space-between;;
+                    border-bottom: 2px solid $red-theme;
+                    border-width: thin;
+                    transition: 0.3s;
+    
+                    li{
+                        list-style: none;
+                       
+                        &:hover{ /*Adds a slider effect to the link elements.*/
+                            border-bottom: 2px solid $red-theme;
+                        }
+                        
+                       & > p{
+                        
+                        color: $dark-theme;
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-regular
+                       }
+                    }
+                }
+            }
+       }
+        .related-prod{
+            .product-content{
+                display: flex;
+                justify-content: space-evenly;
+                @include center-productBox
+            }
+        }
+    }  
+}
+
+}

@@ -1,0 +1,44 @@
+/*Mobile layout*/
+
+.product-grid{
+    margin-top: 2rem;
+    flex-direction: column;
+
+    .product-header{ /*Center the content*/
+        text-align: center;
+    }
+
+    & > .container{
+        
+       
+        & > .product-rows{ /*Creates flex items and displays them in a row.*/
+           display: flex;
+           flex-direction: column;
+            @include center-productBox; /*Add styling fot the product boxes. With centered content.  */
+        }
+      
+       
+    }
+}
+
+/*Computer screen */
+
+@media (min-width: 992px){
+    .product-grid{
+        & > .container{
+            @include container-small; /*Adds the small container*/ 
+
+          
+
+            & > .product-rows{ /*Displays content in a 4x2 grid. */
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                @include center-productBox;
+            }
+        }
+    }
+}

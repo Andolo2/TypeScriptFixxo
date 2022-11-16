@@ -1,0 +1,75 @@
+.our-speciality{
+    
+
+    & > .container-fluid{ /* Vreates flex ontainer and set´s it to a column based layout*/
+        background-color: $white-theme-20;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+
+        .sp-card-container{
+           
+            display: flex;
+
+            h3{
+                text-align: center; /*Center the text based content in card-container*/
+                font-size: $font-size-20;
+                font-weight: $font-weight-bold;
+            }
+
+            .sp-cards{ /*Set´s a fixed widh and height*/
+                width: 250px;
+                height: 250px;
+                background-color: $white-theme-10;
+                margin: 2rem 0rem 2rem 2rem;
+
+                display: flex;
+                align-items: center;
+
+                .sp-content{
+                    padding-left: 1rem;
+
+                    h3{
+                        font-size: $font-size-20;
+                    }
+
+                    .sp-link{
+                        text-decoration: underline;
+
+                        a{
+                            text-decoration: none;
+                            color: $dark-theme;
+                        }
+
+                        
+                    }
+                }
+            }
+    
+            .sp-background{ /*Set´s a fixed widh and height on the grey box/image*/
+                width: 250px;
+                height: 250px;
+                background-color: $grey-theme-21;
+                margin: 2rem 2rem 2rem 0rem;
+            }
+        }
+        
+      
+    }
+      
+}
+
+@media (min-width: 992px){
+    .our-speciality{
+        
+    
+        & > .container-fluid{
+            background-color: #f5f5f5;
+           
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            max-width: 1680px;
+        
+        }
+}   }

@@ -1,0 +1,156 @@
+.winter-clear-new-arrival{
+
+    @include center-Content;
+    flex-direction: column; /*Column based layout for mobile. */
+
+   & > .container{
+    padding: 0;
+
+        .winter-clear-content{ /*include css styling for the cards and button from mixin. */
+        @include center-Content;
+        flex-direction: column;
+        @include black-button;
+        padding-bottom: 1rem;
+
+        .winter-clear-text{ /*Center text and button on mobile.*/ 
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                text-align: center;
+                font-size: $font-size-45;
+                font-weight: $font-weight-bold;
+            }
+    
+            p{
+                text-align: center;
+            }
+        }
+
+        img{
+            width: 100%;
+        }
+
+      
+    }
+
+    .new-arrival-content{
+        @include center-Content;
+        flex-direction: column;
+        @include black-button;
+
+        img{
+            width: 100%;
+        }
+
+        .new-arrival-text{ /*Center texts and make column based layout.*/
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            h2{
+                font-size: $font-size-45;
+                font-weight: $font-weight-bold;
+                text-align: center;
+            }
+
+            
+        }  
+    }
+   }
+    
+    
+    
+}
+
+
+
+
+@media (min-width: 992px){
+    .winter-clear-new-arrival{
+        
+       & > .container{ 
+        max-width: $max-width-XXL; /*Set´s a fixed with for 922px+ screens and speces the tow cards evently*/
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-evenly;
+
+        .winter-clear-content{
+            display: flex;
+            flex-direction: column;
+            @include black-button;
+            padding-bottom: 1rem;
+            position: relative;
+           
+            .winter-clear-text{
+    
+                position: absolute; /*Needed to position the text over the image.*/
+                    margin-left: 0;
+                    margin-right: auto;
+                    left: 0;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 2.0rem;
+
+                    display: flex;
+                    align-items: flex-start;
+               
+                h2{
+                    text-align: left;
+                    font-size: $font-size-35;
+                    font-weight: $font-weight-bold;
+                }
+        
+                p{
+                    text-align: left;
+                    width: 50%;
+                }
+            }
+    
+            img{
+                
+                 height: 560px;
+                
+            }
+    
+          
+        }
+    
+        .new-arrival-content{
+            
+            
+            @include black-button; /*Include black button css styling from mixin*/
+            position: relative;
+    
+            img{ /*fixed height and with of image*/
+                width: 100%;
+                height: 560px;
+            }
+    
+            .new-arrival-text{
+                display: flex;
+                position: absolute;
+                left: 0;
+                
+                padding-left: 2rem;
+                
+                
+                h2{
+                    font-size: $font-size-45;
+                    font-weight: $font-weight-bold;
+                    text-align: center;
+                }
+    
+                
+            }  
+        }
+       }
+        
+        
+       }
+ }
+    

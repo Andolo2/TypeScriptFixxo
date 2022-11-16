@@ -1,0 +1,34 @@
+/*MOBILE AND COMPUTER SETUP*/
+
+.divider{
+    margin-top:3rem ; /*Center all cntent and include the black button mixin and small container mixin.*/
+    & > .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @include container-small;
+        
+        @include black-button;
+        height: 400px; /* fixed height of the divider*/
+        background-color: $grey-theme-30;
+
+        .divider-content{
+
+            display: flex; /*Centers content within container. And set´s fontsizes + weight.*/
+            align-items: center;
+            flex-direction: column;
+            h2{
+                font-size: $font-size-45;
+                color: $white-theme-10;
+                text-align: center;
+            }
+    
+            p{
+                font-size: $font-size-20;
+                color: $white-theme-10;
+                text-align: center;
+            }
+        }
+    }
+}

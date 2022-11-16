@@ -1,0 +1,46 @@
+/*MOBILE LAYOUT*/
+
+.circle-links{
+    & > .container{ /* Setup fot the container, space all items evently within*/
+        display: flex; 
+        justify-content: space-evenly;
+        flex-direction: column;
+        .circle-container{
+            text-align: center;
+
+            h2, /* Set´s fontsize and wieght for thr header*/
+            a{
+                font-size: $font-size-20;
+                font-weight: $font-weight-bold;
+                text-decoration: none;
+                color: black;
+                transition: 0.1s;
+            }
+
+            p{ /* Set´s fontsize and wieght for thr paragraph*/
+                font-size: $font-size-16;
+                font-weight:$font-weight-regular ;
+            }
+
+            &:hover{
+              h2{
+            
+                font-weight: $font-weight-semi-regular;
+              }
+            }
+        }
+    }
+}
+
+/*COMPUTER LAYOUT*/
+@media (min-width: 992px){
+    .circle-links{ /* Changes flex direction and changes container size*/
+        & > .container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            @include container-small;
+            
+        }
+    }
+}
