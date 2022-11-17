@@ -13,14 +13,3 @@ export const showcaseContext = createContext() */
 
 
 
-
-   
-interface productContextInterface {
-  name: string;
-  author: string;
-  url: string;
-}
-
-const productContext = createContext<productContextInterface | null>(null);
-  
-  

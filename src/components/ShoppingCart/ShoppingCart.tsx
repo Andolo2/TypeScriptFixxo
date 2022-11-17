@@ -2,8 +2,13 @@ import React from 'react'
 import { useShoppingCart } from '../../assets/context/shoppingCartContext'
 import ShoppingCartItem from './ShoppingCartItem'
 
+type Props= {
+  cartItems: number
+ 
+  
+}
 
-const ShoppingCart: React.FC = () => {
+const ShoppingCart: React.FC <Props> = () => {
   
   const {cartItems} = useShoppingCart()
   return (
@@ -14,7 +19,7 @@ const ShoppingCart: React.FC = () => {
     </div>
   <div className="offcanvas-body">
     {
-      cartItems.map(item => (<ShoppingCartItem key={item.articleNumber}  item={item}/>))
+      cartItems.map((item: { articleNumber: React.Key | null | undefined}) => (<ShoppingCartItem key={item.articleNumber}  item={item}/>))
     }
   </div>
 </div>

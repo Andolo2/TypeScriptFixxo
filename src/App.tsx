@@ -2,15 +2,16 @@ import React, {useState, useEffect} from 'react'
 //import {productContext, featuredContext, featuredNineContext, showcaseContext} from  './assets/context/context'
 import { BrowserRouter, Routes, Route, Form } from 'react-router-dom';
 import './App.min.css';
-import { ProductInterface, ShoppingCartContextInterface } from './models/productModel';
+//import { ProductInterface } from './models/productModel';
 import HomeView from './views/HomeView'
 
 
 const App: React.FC = () => {
-  const [products, setProducts] = useState<ShoppingCartContextInterface[]>([])
-  const [featured, setTwoFeatured] = useState<ShoppingCartContextInterface[]>([])
-  const [nineCards, setNineCards] = useState<ShoppingCartContextInterface[]>([])
-  const [showcase, setShowcase] = useState<ShoppingCartContextInterface[]>([])
+
+  const [products, setProducts] = useState()
+  const [featured, setTwoFeatured] = useState()
+  const [nineCards, setNineCards] = useState()
+  const [showcase, setShowcase] = useState()
   
     useEffect(() => {
   

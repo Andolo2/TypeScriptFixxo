@@ -1,7 +1,12 @@
 import React from 'react'
 import { useShoppingCart } from '../../assets/context/shoppingCartContext'
 
-const  ShoppingCartItem = ({item}) => {
+
+type props ={
+  item: any
+}
+
+const  ShoppingCartItem: React.FC<props> = ({item}) => {
 
   const {incrementQuantity, decrementQuantity, removeItem} = useShoppingCart();
 

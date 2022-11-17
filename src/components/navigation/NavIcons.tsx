@@ -1,14 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { menuProps } from '../../models/NavModel'
 
-type NavProps = {
 
-  link: string
-  icon: string
-  quantity: number
-}
 
-const NavIcons: React.FC = ({link, icon, quantity}: any) =>{
+
+
+const NavIcons: React.FC <menuProps> = ({link, icon, quantity}) =>{
    return(
   
       <div className='circle-layout'>

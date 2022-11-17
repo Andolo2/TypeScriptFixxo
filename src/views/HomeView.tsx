@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react'
- //import NavBarSec from '../sections/NavBarSec'
+import NavBarSec from '../sections/NavBarSec'
 import JumboSec from '../sections/JumboSec'
 //import ProdCard from '../sections/productCardSec'
-//import WinterCard from '../sections/WinterClearSec' 
+import WinterCard from '../sections/WinterClearSec' 
 import AdCards from '../sections/AdCardsSec'
  import SpecCard from '../sections/SpecialitySec'
 // import SaleCardsSec1 from '../sections/SaleCardsSec1'
@@ -28,18 +28,19 @@ const Frontpage: React.FC = ()  => {
   
 //  window.top.document.title = 'fixxo1';
 
-/*  
-  const productContexts = useContext(productContext)
+
+   /*  const productContexts = useContext(productContext)
+  /*  
   const featuredContexts = useContext(featuredContext)
   const featuredNineContexts = useContext(featuredNineContext) */
   return (
     
     
     <div>
-       {/* <NavBarSec></NavBarSec> */}
+      <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
       <JumboSec></JumboSec>
-      {/* <WinterCard></WinterCard>
-      <ProdCard title='Featured Products' items={productContexts}/> */}
+      <WinterCard></WinterCard>
+      {/*<ProdCard title='Featured Products' items={productContexts}/> 
       <AdCards></AdCards>
        <SpecCard></SpecCard>
       {/*<SaleCardsSec1  items={featuredContexts}/>
