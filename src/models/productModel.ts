@@ -4,3 +4,13 @@ export interface ProductInterface{
     description?: string
     price: number
 }
+
+export interface ShoppingCartContextInterface {
+    articleNumber: string;
+    quantity: number;
+    incrementQuantity: number
+    decrementQuantity: number
+    removeItem: any
+  
+   
+  }

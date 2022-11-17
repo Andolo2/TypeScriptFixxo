@@ -1,8 +1,13 @@
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import { useShoppingCart } from '../../assets/context/shoppingCartContext'
+import { ShoppingCartContextInterface } from '../../models/productModel'
 
-const ProductCards: React.FC = ({item}) => {
+
+
+
+
+const ProductCards: React.FC <{ item: any}> = ({item}) => {
   
   const AddToWish = (e:any) => {
     console.log('Added to wish list')
@@ -16,7 +21,7 @@ const ProductCards: React.FC = ({item}) => {
     console.log('Added to cart list')
   }
 
-  const {incrementQuantity} = useShoppingCart()
+  const {incrementQuantity} =  useShoppingCart()
 
   return(
     <div className="product-box">
