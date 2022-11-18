@@ -1,5 +1,6 @@
 import React from 'react'
-//import { useShoppingCart } from '../assets/context/shoppingCartContext'
+import { useShoppingCart } from '../assets/context/shoppingCartContext'
+
 import Logo from '../components/navigation/Logo'
 import NavIcons from '../components/navigation/NavIcons'
 import NavLinks from '../components/navigation/Navlinks'
@@ -7,7 +8,7 @@ import { menuProps } from '../models/NavModel'
 
 const  NavBar: React.FC <menuProps>  = () => {
 
-  //const {cartQuantity} = useShoppingCart() 
+  const {cartQuantity} = useShoppingCart() 
 
   return (
     <div>
@@ -20,7 +21,7 @@ const  NavBar: React.FC <menuProps>  = () => {
         <NavIcons link="/*" icon="fa-sharp fa-solid fa-code-compare" quantity={0} />
         <NavIcons quantity={1} link="/*" icon="fa-regular fa-heart" />
         <button className="/" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
-      
+        <NavIcons quantity={cartQuantity} link="/" icon="fa-regular fa-bag-shopping" />
         </button>
        
         </div>

@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from 'react'
-//import {productContext, featuredContext, featuredNineContext, showcaseContext} from  './assets/context/context'
+import {productContext} from  './assets/context/context'
 import { BrowserRouter, Routes, Route, Form } from 'react-router-dom';
 import './App.min.css';
-//import { ProductInterface } from './models/productModel';
+
 import HomeView from './views/HomeView'
+import { ShoppingCartProvider } from './assets/context/shoppingCartContext';
+import ContactView from './views/ContactView';
+//import ProductView from './views/ProductView';
+import ProductDetailsView from './views/ProductDetailsView';
+import NotFoundView from './views/NotFoundView';
 
 
 const App: React.FC = () => {
@@ -58,8 +63,27 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <HomeView />
-    </BrowserRouter>
+    
+    <productContext.Provider value={products}>
+  {/*    <featuredContext.Provider value={featured}>
+      <featuredNineContext.Provider value={nineCards}>
+       <showcaseContext.Provider value={showcase}> */}
+       <ShoppingCartProvider>
+        <Routes>
+            <Route path='/' element={<HomeView  />}  />
+            <Route path='ContactView' element={<ContactView />} />
+            
+            <Route path='/ProductView/:id' element={<ProductDetailsView />} />
+            <Route path='*' element={<NotFoundView />} />
+        </Routes>
+        </ShoppingCartProvider>
+     {/*   </showcaseContext.Provider>
+      </featuredNineContext.Provider>
+     </featuredContext.Provider> */}
+    </productContext.Provider>
+   
+  </BrowserRouter>
+  
   );
 }
 

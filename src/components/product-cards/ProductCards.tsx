@@ -1,8 +1,8 @@
-export{}
-/* import React, {useState} from 'react'
+
+ import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import { useShoppingCart } from '../../assets/context/shoppingCartContext'
-import { ProductProps } from '../../models/productModel'
+//import { ProductProps } from '../../models/productModel'
 
 type Item = {
   item: any
@@ -21,8 +21,8 @@ const ProductCards: React.FC <Item> = ({item}) => {
   const AddToCart = (e:any) => {
     console.log('Added to cart list')
   }
-
-//  const {incrementQuantity} = useShoppingCart()
+//<button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
+  const {incrementQuantity} = useShoppingCart()
 
   return(
     <div className="product-box">
@@ -30,7 +30,7 @@ const ProductCards: React.FC <Item> = ({item}) => {
     <ul className="product-menu">
       <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
       <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
-      <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
+      
     </ul>
     <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
       <button>
@@ -57,4 +57,4 @@ const ProductCards: React.FC <Item> = ({item}) => {
   
 }
 
-export default ProductCards */
+export default ProductCards 

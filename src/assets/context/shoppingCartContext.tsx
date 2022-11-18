@@ -10,10 +10,10 @@ type ProviderProp={
 
 type ShoppingCartContext  = {
  
-    cartQuantity: (articleNumber: number) => number
+    cartQuantity: number
     getItemQuantity: (articleNumber: number) => void
     incrementQuantity: (articleNumber: number) => void
-    decrementQuantity:(articleNumber: number) => void
+    decrementQuantity:(articleNumber?: any) => void
     removeItem: (articleNumber: number) => void
     cartItems: cartItemProp[]
 }
