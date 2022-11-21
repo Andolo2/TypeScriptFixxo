@@ -9,7 +9,7 @@ type Item = {
 }
 
 const SaleCard1: React.FC <Item> = ({item}) => {
-//<button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
+//
 
   
     const AddToWish = (e:any) => {
@@ -32,7 +32,7 @@ const SaleCard1: React.FC <Item> = ({item}) => {
         <NavLink className="product-menu" to={'/'}>
           <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
           <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
-          
+          <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
         </NavLink>
         <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
           <button>

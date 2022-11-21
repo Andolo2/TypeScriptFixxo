@@ -20,8 +20,16 @@ interface featuredContextInterface {
 
 export const featuredContext = createContext<featuredContextInterface | unknown>(null);
 
-/*
 
+interface featuredNineContextInterface {
+  product: string
+ }
+
+export const featuredNineContext = createContext<featuredNineContextInterface | unknown>(null);
+
+
+
+/*
 export const featuredNineContext = createContext()
 
 export const showcaseContext = createContext() */

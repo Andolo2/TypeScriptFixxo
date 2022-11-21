@@ -1,5 +1,5 @@
 import React from 'react'
-import Salecard1 from '../components/salecards/Salecard1'
+import Salecard2 from '../components/salecards/Salecard2'
 import { ProductProp } from '../models/ProductPageModel'
 
 
@@ -19,13 +19,13 @@ const SaleCardsSec:React.FC<ProductProp> = ({title, items = []}) => {
            <div className="sale-cards">
                <div className='sale-card-row-1'>
                 {
-                items && items.map((product: { articleNumber: React.Key | undefined }) => <Salecard1 key={product.articleNumber}  item={product}/>)
+                items && items.map((product: { articleNumber: React.Key | undefined }) => <Salecard2 key={product.articleNumber}  item={product}/>)
                 
                }
                </div>
                <div className='sale-card-row-2'>
                {
-                items && items.map((product: { articleNumber: React.Key |   undefined }) => <Salecard1 key={product.articleNumber}  item={product}/>)
+                items && items.map((product: { articleNumber: React.Key |   undefined }) => <Salecard2 key={product.articleNumber}  item={product}/>)
                } 
                </div>
            </div>

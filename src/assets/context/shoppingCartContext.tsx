@@ -9,11 +9,11 @@ type ProviderProp={
 }
 
 type ShoppingCartContext  = {
- 
+    // children: ReactNode
     cartQuantity: number
     getItemQuantity: (articleNumber: number) => void
-    incrementQuantity: (articleNumber: number) => void
-    decrementQuantity:(articleNumber?: any) => void
+    incrementQuantity: (cartItem: any) => void
+    decrementQuantity:(articleNumber: number) => void
     removeItem: (articleNumber: number) => void
     cartItems: cartItemProp[]
 }
@@ -21,9 +21,10 @@ type ShoppingCartContext  = {
 type cartItemProp = {
     
     quantity: number
-    item: number
+    item?: number
     articleNumber: number
-    items: number
+    items?: number
+    product?: any
    
 }
 
@@ -46,27 +47,29 @@ export const ShoppingCartProvider: React.FC <ProviderProp> = ({children}) => {
         return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
         
     }   
+    
+    const incrementQuantity = (cartItem: any) => {
+     
+        const {articleNumber, product} = cartItem
 
-    const incrementQuantity = (cartItem: number) => {
-        /*const {articleNumber, product} = cartItem
-
-        /*setCartItems(items => {
-            if (items.find(item => item.articleNumber === articleNumber)?.quantity === null) {
-                return [...items , { articleNumber, product, quantity: 1 }]
-            } else {
+        setCartItems(items => {
+          if (items.find(item => item.articleNumber === articleNumber) == null){
+              return [...items, {articleNumber, product, quantity: 1}]
+          } else {
               return items.map(item => {
-                if (item.articleNumber === articleNumber) {
-                  return { ...item, quantity: item.quantity - 1 }
-                } else {
-                  return item
-                }
+                  if (item.articleNumber === articleNumber) {
+                      return {...item, quantity: item.quantity + 1}
+
+                  } else{
+                      return item
+                  }
               })
-            }
-          })*/
+          }
+      })
     }
 
-    const decrementQuantity = (cartItem: { articleNumber: number; }) => {
-        const {articleNumber} = cartItem;
+    const decrementQuantity = (articleNumber: number) => {
+        
         
         
         setCartItems(items => {
@@ -94,6 +97,6 @@ export const ShoppingCartProvider: React.FC <ProviderProp> = ({children}) => {
 
     return <ShoppingCartContext.Provider value={{cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem}}>
         {children}
-        <ShoppingCart cartItems={0} />
+        <ShoppingCart cartItems={0}  />
     </ShoppingCartContext.Provider>
 }

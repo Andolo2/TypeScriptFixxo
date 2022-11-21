@@ -1,14 +1,12 @@
-
- import React, {useState} from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useShoppingCart } from '../../assets/context/shoppingCartContext'
-//import { ProductProps } from '../../models/productModel'
+import {useShoppingCart} from '../../assets/context/shoppingCartContext'
 
 type Item = {
   item: any
 }
 
-const ProductCards: React.FC <Item> = ({item}) => {
+const NineCard: React.FC <Item> = ({item}) => {
   
   const AddToWish = (e:any) => {
     console.log('Added to wish list')
@@ -57,4 +55,4 @@ const ProductCards: React.FC <Item> = ({item}) => {
   
 }
 
-export default ProductCards 
+export default NineCard

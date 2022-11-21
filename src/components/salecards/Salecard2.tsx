@@ -2,30 +2,38 @@ import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 
 import { useShoppingCart } from '../../assets/context/shoppingCartContext'
+import { ProductProp } from '../../models/ProductPageModel'
 
-const SaleCard2 = ({item}) => {
+type Item = {
+  item: any
+}
 
-    const AddToWish = (e) => {
+const SaleCard1: React.FC <Item> = ({item}) => {
+//
+
+  
+    const AddToWish = (e:any) => {
         console.log('Added to wish list')
       }
     
-      const AddToSave = (e) => {
+      const AddToSave = (e:any) => {
         console.log('Added to save list')
       }
     
-      const AddToCart = (e) => {
+      const AddToCart = (e:any) => {
         console.log('Added to cart list')
       }
-      
+    
       const {incrementQuantity} = useShoppingCart()
+
     return(
         <div className="product-box">
-        <div className="product-background"><img  src={item.imageName} alt='{item.imageName}'/></div>
-        <ul className="product-menu">
+        <div className="product-background"><img src={item.imageName} alt='{item.imageName}'/></div>
+        <NavLink className="product-menu" to={'/'}>
           <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
           <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
           <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
-        </ul>
+        </NavLink>
         <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
           <button>
             <i id="top-left" className="fa-solid fa-chevron-down"></i>
@@ -37,11 +45,11 @@ const SaleCard2 = ({item}) => {
           <h4>{item.category}</h4>
           <p>{item.name}</p>
           <div className="product-stars">
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
           </div>
           <p id="product-price">{item.price}</p>
         </div>
@@ -49,4 +57,4 @@ const SaleCard2 = ({item}) => {
     )
 }
 
-export default SaleCard2
+export default SaleCard1
