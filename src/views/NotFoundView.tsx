@@ -5,10 +5,10 @@ import notFound from  '../assets/images/notFound/404notfound.png'
 
 function NotFoundView() {
 
-  window.top.document.title = 'NOT FOUND || fixxo.';
+ // window.top.document.title = 'NOT FOUND || fixxo.';
   return (
     <div>
-      <NavBarSec></NavBarSec>
+      <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
       <img src={notFound} alt='page not found'></img>
       <FooterSec></FooterSec>
       </div>

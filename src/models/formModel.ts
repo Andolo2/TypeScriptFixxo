@@ -1,9 +1,12 @@
-export interface FormName {
-    name: string
-}
-export interface FormEmail {
-    email: string
-}
-export interface FormComment {
-    comment: string
-}
+export interface formProp  {
+    name?: string 
+    email?: string 
+    comment?: string 
+    form?: any
+ }
+ 
+ export interface errorsProp  {
+     name?:string,
+     email?: string,
+     comments?: string
+ }

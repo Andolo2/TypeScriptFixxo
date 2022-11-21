@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react'
+
+ import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 
 import NavBarSec from '../sections/NavBarSec'
 import FooterSec from '../sections/FooterSec'
+import Footer from '../sections/FooterSec'
 
-const ProductDetailsView = () => {
+const ProductDetailsView: React.FC = () => {
 
     const {id} = useParams()
     const [products, setProducts] = useState({})
@@ -23,14 +25,14 @@ const ProductDetailsView = () => {
   return (
     
     <>
-        <NavBarSec />
-        <div>{products.name}</div>
+        <NavBarSec link={''} icon={''} quantity={0} />
+       {/*  <div>{products.name}</div>
         <img src={products.imageName} />
-        <div>{products.articleNumber}</div>
-
+        <div>{products.articleNumber}</div> */}
+        <Footer />
     </>
     
   )
 }
 
-export default ProductDetailsView
+export default ProductDetailsView 

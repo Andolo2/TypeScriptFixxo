@@ -1,4 +1,5 @@
-export const submitData = async (url, method, data, contentType = 'application/json') => {
+export{}
+/* export const submitData = async (url: RequestInfo | URL, method: string, data: string, contentType = 'application/json') => {
     
     const res = await fetch(url, {
     
@@ -20,7 +21,7 @@ export const submitData = async (url, method, data, contentType = 'application/j
   
 
 
-export const validate = (e, form = null) => {
+export const validate = (e: { type: string; target: { id: any; value: any } }, form = null) => {
     if (e.type === 'submit') {
      const errors = {}
      errors.name = validate_name(form.name)
@@ -42,7 +43,7 @@ export const validate = (e, form = null) => {
  }
  
  
- const validate_name = (value) => {
+ const validate_name = (value: string | any[]) => {
      if (!value)
          return 'A name is required'
      else if (value.length < 2)
@@ -51,7 +52,7 @@ export const validate = (e, form = null) => {
          return null
  }
  
- const validate_email = (value) => {
+ const validate_email = (value: string) => {
      const regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
      
      if (!value)
@@ -62,11 +63,11 @@ export const validate = (e, form = null) => {
          return null
  }
  
- const validate_comments = (value) => {
+ const validate_comments = (value: string | any[]) => {
      if (!value)
          return 'A comment is required'
      else if (value.length < 5)
          return 'Your comment must be at least 5 characters long'
      else
          return null
- }
+ } */

@@ -29,10 +29,14 @@ export const featuredNineContext = createContext<featuredNineContextInterface | 
 
 
 
-/*
-export const featuredNineContext = createContext()
+interface showcaseContextInterface {
+  product: string
+ }
 
-export const showcaseContext = createContext() */
+export const showcaseContext = createContext<showcaseContextInterface | unknown>(null);
+
+
+
 
 
 

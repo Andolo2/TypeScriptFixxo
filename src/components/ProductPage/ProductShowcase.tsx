@@ -1,6 +1,11 @@
 import React from 'react'
+import { ProductProp } from '../../models/ProductPageModel'
 
-const ProductShowcase = ({item}) => {
+type Item = {
+  item: any
+}
+
+const ProductShowcase:React.FC <Item> = ({item}) => {
   return (
     
     <div className="product-showcase">

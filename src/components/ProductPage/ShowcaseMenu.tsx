@@ -1,8 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+type Item = {
+   item: any
+ }
 
-const ShowcaseMenu = ({item}) => {
+const ShowcaseMenu:React.FC <Item> = ({item}) => {
    return(
    <div className="showcase-menu">
          <div className="showcase-menu-content">
