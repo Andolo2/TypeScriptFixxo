@@ -18,7 +18,7 @@ const  NavBar: React.FC <menuProps>  = () => {
         <NavLinks></NavLinks>
         <div className='nav-icons'>
         <NavIcons link="/*" icon="fa-solid fa-magnifying-glass" quantity={0}/>
-        <NavIcons link="/*" icon="fa-sharp fa-solid fa-code-compare" quantity={0} />
+        <NavIcons link="/editProductView" icon="fa-sharp fa-solid fa-code-compare" quantity={0} />
         <NavIcons quantity={1} link="/*" icon="fa-regular fa-heart" />
         <button className="/" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
         <NavIcons quantity={cartQuantity} link="/" icon="fa-regular fa-bag-shopping" />

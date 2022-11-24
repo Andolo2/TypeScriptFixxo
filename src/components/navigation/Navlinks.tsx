@@ -9,6 +9,8 @@ function Navlinks() {
              <NavLink className="menu-link" to="/Categories">Categories</NavLink>
              <NavLink className="menu-link" to="/ContactView">Contact</NavLink>
              <NavLink className="menu-link" to="/ProductView">Products</NavLink>
+
+             
            </ul>
   )
 }

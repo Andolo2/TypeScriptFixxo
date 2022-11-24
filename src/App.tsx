@@ -6,11 +6,10 @@ import './App.min.css';
 import HomeView from './views/HomeView'
 import { ShoppingCartProvider } from './assets/context/shoppingCartContext';
 import ContactView from './views/ContactView';
-//import ProductView from './views/ProductView';
 import ProductDetailsView from './views/ProductDetailsView';
 import NotFoundView from './views/NotFoundView';
 import ProductView from './views/ProductView';
-
+import EditProductView from './views/EditProductView';
 
 const App: React.FC = () => {
 
@@ -76,6 +75,7 @@ const App: React.FC = () => {
             <Route path='ProductView' element={<ProductView />} /> 
             <Route path='/ProductView/:id' element={<ProductDetailsView />} />
             <Route path='*' element={<NotFoundView />} />
+            <Route path='EditProductView' element={<EditProductView />} />
         </Routes>
         </ShoppingCartProvider>
       </showcaseContext.Provider>
