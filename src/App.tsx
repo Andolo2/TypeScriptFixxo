@@ -10,6 +10,7 @@ import ProductDetailsView from './views/ProductDetailsView';
 import NotFoundView from './views/NotFoundView';
 import ProductView from './views/ProductView';
 import EditProductView from './views/EditProductView';
+import ProductProvider from './assets/context/ProductContext';
 
 const App: React.FC = () => {
 
@@ -68,15 +69,17 @@ const App: React.FC = () => {
      <featuredContext.Provider value={featured}>
       <featuredNineContext.Provider value={nineCards}>
         <showcaseContext.Provider value={showcase}>
-       <ShoppingCartProvider>
-        <Routes>
-            <Route path='/' element={<HomeView  />}  />
-            <Route path='ContactView' element={<ContactView />} />
-            <Route path='ProductView' element={<ProductView />} /> 
-            <Route path='/ProductView/:id' element={<ProductDetailsView />} />
-            <Route path='*' element={<NotFoundView />} />
-            <Route path='EditProductView' element={<EditProductView />} />
-        </Routes>
+        <ShoppingCartProvider>
+          <ProductProvider>
+            <Routes>
+                <Route path='/' element={<HomeView  />}  />
+                <Route path='ContactView' element={<ContactView />} />
+                <Route path='ProductView' element={<ProductView />} /> 
+                <Route path='/ProductView/:id' element={<ProductDetailsView />} />
+                <Route path='*' element={<NotFoundView />} />
+                <Route path='EditProductView' element={<EditProductView />} />
+            </Routes>
+          </ProductProvider>
         </ShoppingCartProvider>
       </showcaseContext.Provider>
       </featuredNineContext.Provider>

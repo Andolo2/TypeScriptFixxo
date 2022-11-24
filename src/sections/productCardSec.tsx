@@ -17,6 +17,7 @@ const ProdSection: React.FC<ProductProp> = ({title, items = []}) => {
     <div className='product-rows'>
       {
         items.map((product: { articleNumber: React.Key | null | undefined }) => <ProdCards key={product.articleNumber}  item={product}/>)
+        
       }
 
     </div>

@@ -9,7 +9,7 @@ function EditProductView() {
       <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
 
       <EditProductSec />
-      <h1>EDITSSSS</h1>
+      
       <FooterSec></FooterSec>
 
 

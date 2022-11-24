@@ -4,7 +4,11 @@ import CreateProducts from '../../components/editProducts/CreateProducts'
 
 function editProductSec() {
   return (
-    <div>editProductSec</div>
+    <div className='d-grid mb-3'>
+      <CreateProducts />
+
+
+    </div>
   )
 }
 
