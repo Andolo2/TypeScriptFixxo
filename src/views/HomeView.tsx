@@ -40,8 +40,8 @@ const Frontpage: React.FC = ()  => {
       <JumboSec></JumboSec>
       <WinterCard></WinterCard>
       <ProdCard title='Featured Products' items={productContexts}/> 
-      {/*<AdCards></AdCards>*/
-       <SpecCard></SpecCard>}
+      <AdCards></AdCards>
+       <SpecCard></SpecCard>
       <SaleCardsSec1  items={featuredContexts} title={''}/>
       {<SaleCardsSec2  items={featuredContexts} title={''}/>}
       <DividerSec></DividerSec>

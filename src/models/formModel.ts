@@ -1,12 +1,6 @@
-export interface formProp  {
-    name?: string 
-    email?: string 
-    comment?: string 
-    form?: any
- }
- 
- export interface errorsProp  {
-     name?:string,
-     email?: string,
-     comments?: string
- }
+export interface contactFormDataType {
+
+   name: string
+   email: string
+   comments : string
+}

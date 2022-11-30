@@ -12,6 +12,7 @@ import ProductView from './views/ProductView';
 import EditProductView from './views/EditProductView';
 import ProductProvider from './assets/context/ProductContext';
 
+
 const App: React.FC = () => {
 
   const [products, setProducts] = useState()
@@ -21,17 +22,17 @@ const App: React.FC = () => {
   
     useEffect(() => {
   
-      const fetchEightProducts = async () => {
+      const fetchEightProducts = async () => { // old: https://win22-webapi.azurewebsites.net/api/products?take=8
         // You can await here
-        let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+        let result = await fetch('http://localhost:5000/api/products')
         setProducts( await result.json())
       }
       fetchEightProducts();
   
       
-       const fetchTwoProducts = async () => {
+       const fetchTwoProducts = async () => { // https://win22-webapi.azurewebsites.net/api/products?take=2
         // You can await here
-        let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=2')
+        let result = await fetch('http://localhost:5000/api/products')
         setTwoFeatured(  await result.json())
         
       }
@@ -39,7 +40,7 @@ const App: React.FC = () => {
   
       const fetchNineProducts = async () => {
         // You can await here
-        let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=9')
+        let result = await fetch('http://localhost:5000/api/products')
         setNineCards(  await result.json())
         
       }

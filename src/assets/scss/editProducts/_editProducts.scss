@@ -1,4 +1,11 @@
-.d-grid{
-    width: 500px;
-    margin-top: 3rem;
+.form-container{
+    display: flex;
+    justify-content: center;
+
+    .d-grid{
+        width: 500px;
+        margin-top: 3rem;
+    }
 }
+
+

@@ -1,20 +1,18 @@
 export interface Product {
-    [x: string]: any
+   
 
-    articleNumber: string
+    articleNumber: number
     name: string
     description: string
     category: string
     price: number
     rating: number
     imageName: string
-
 
 }
 
 export interface ProductRequest {
 
-    articleNumber: string
     name: string
     description: string
     category: string
@@ -25,8 +23,9 @@ export interface ProductRequest {
 
 }
 
+export interface ProductProviderProps {
 
-export interface iProductProviderProps {
-	children: any
+    children: any
+  }
 
-}
+  
